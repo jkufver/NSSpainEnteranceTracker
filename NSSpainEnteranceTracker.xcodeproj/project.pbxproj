@@ -17,6 +17,10 @@
 		FC21F23819C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
 		FC21F23919C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
 		FC21F23B19C9C53000491F9A /* BeaconActivityLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */; };
+		FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */; };
+		FC9D33A019C9CFED001D1FD7 /* BeaconActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */; };
+		FC9D33A219C9D077001D1FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */; };
+		FC9D33A519C9D308001D1FD7 /* BeaconActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,9 @@
 		48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSpainEnteranceTrackerTests.swift; sourceTree = "<group>"; };
 		FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLogger.swift; sourceTree = "<group>"; };
 		FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLoggerTests.swift; sourceTree = "<group>"; };
+		FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivity.swift; sourceTree = "<group>"; };
+		FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4855405419C99E6000C9A7A6 /* CoreBluetooth.framework in Frameworks */,
+				FC9D33A219C9D077001D1FD7 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +74,6 @@
 		48553FC119C98F8E00C9A7A6 = {
 			isa = PBXGroup;
 			children = (
-				4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */,
 				48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */,
 				48553FE419C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests */,
 				48553FCB19C98F8E00C9A7A6 /* Products */,
@@ -86,6 +92,7 @@
 		48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FC9D33A319C9D08C001D1FD7 /* Frameworks */,
 				FC21F23619C9999D00491F9A /* utils */,
 				48553FCF19C98F8E00C9A7A6 /* AppDelegate.swift */,
 				48553FD119C98F8E00C9A7A6 /* FirstViewController.swift */,
@@ -94,6 +101,7 @@
 				48553FD819C98F8E00C9A7A6 /* Images.xcassets */,
 				48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */,
 				48553FCD19C98F8E00C9A7A6 /* Supporting Files */,
+				FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */,
 			);
 			path = NSSpainEnteranceTracker;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */,
 				48553FE519C98F8E00C9A7A6 /* Supporting Files */,
 				FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */,
+				FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */,
 			);
 			path = NSSpainEnteranceTrackerTests;
 			sourceTree = "<group>";
@@ -130,6 +139,14 @@
 				FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		FC9D33A319C9D08C001D1FD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */,
 				48553FD419C98F8E00C9A7A6 /* SecondViewController.swift in Sources */,
 				48553FD019C98F8E00C9A7A6 /* AppDelegate.swift in Sources */,
 				FC21F23819C99A3300491F9A /* BeaconActivityLogger.swift in Sources */,
@@ -243,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9D33A019C9CFED001D1FD7 /* BeaconActivity.swift in Sources */,
 				FC21F23B19C9C53000491F9A /* BeaconActivityLoggerTests.swift in Sources */,
+				FC9D33A519C9D308001D1FD7 /* BeaconActivityTests.swift in Sources */,
 				FC21F23919C99A3300491F9A /* BeaconActivityLogger.swift in Sources */,
 				48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */,
 			);
