@@ -40,8 +40,23 @@ class FirstViewController: UIViewController {
         
         if beaconActivity.minor == 1 {
             self.insideBeaconUDIDLabel.text = newString
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.insideBeaconImageView.alpha = 0
+                }, completion: {
+                    (value: Bool) in
+                self.insideBeaconImageView.alpha = 1.0
+            })
+            
         } else if beaconActivity.minor == 0 {
             self.outsideBeaconUDIDLabel.text = newString
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.outsideBeaconImageView.alpha = 0
+                }, completion: {
+                    (value: Bool) in
+                    self.outsideBeaconImageView.alpha = 1.0
+            })
         }
     }
 

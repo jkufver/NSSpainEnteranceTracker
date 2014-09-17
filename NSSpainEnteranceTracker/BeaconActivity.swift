@@ -30,7 +30,6 @@ class BeaconActivity: NSObject {
         self.proximity = .Immediate
         self.accuracy = 2
         self.rssi = 123456
-        
     }
     
     override var description: String {
