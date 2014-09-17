@@ -38,9 +38,9 @@ class FirstViewController: UIViewController {
         
         let newString = beaconActivity.description.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
-        if beaconActivity.major == 11 {
+        if beaconActivity.minor == 1 {
             self.insideBeaconUDIDLabel.text = newString
-        } else {
+        } else if beaconActivity.minor == 0 {
             self.outsideBeaconUDIDLabel.text = newString
         }
     }
