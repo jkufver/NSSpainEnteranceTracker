@@ -119,5 +119,11 @@ class BeaconSignalDispatcher: NSObject {
             staticBeacon.proximity = beacon.proximity;
         }
     }
+    
+    func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!) {
+        for (index, element) in enumerate(beacons) {
+            handleBeaconSignal(element as CLBeacon)
+        }
+    }
 }
 

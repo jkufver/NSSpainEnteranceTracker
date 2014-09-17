@@ -9,11 +9,15 @@
 import Foundation
 import CoreLocation
 
+protocol MonitoringEngineDelegate : NSObjectProtocol {
+    func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!)
+}
+
 private let _singletonInstance = MonitoringEngine()
 
 class MonitoringEngine: NSObject, CLLocationManagerDelegate {
     
-    
+    var delegates = Array<MonitoringEngineDelegate>()
     var locationManager = CLLocationManager()
     
     
@@ -48,10 +52,22 @@ class MonitoringEngine: NSObject, CLLocationManagerDelegate {
         locationManager.startRangingBeaconsInRegion(region)
     }
     
+    func registerDelegate(item:MonitoringEngineDelegate) {
+        delegates.append(item)
+    }
+    
+    func removeDelegate(item:MonitoringEngineDelegate) {
+        for (index, element) in enumerate(delegates) {
+            if element === item {
+                delegates.removeAtIndex(index)
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         
-        for b in beacons {
-            println(b.description)
+        for (index, element) in enumerate(delegates) {
+            element.monitoringEngine(self, didRangeBeacons: beacons)
         }
     }
 
