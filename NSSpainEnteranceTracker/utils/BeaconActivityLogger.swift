@@ -24,15 +24,10 @@ class BeaconActivityLogger {
         file = NSFileHandle(forUpdatingAtPath: fileName)
     }
     
-    func logActivity(jsonLogString: String)
+    func logActivity(beaconActivity: BeaconActivity)
     {
-        let dateFormater : NSDateFormatter = NSDateFormatter()
-        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"
-    
-        let logMessage = String(format:"%@\t%@\n", dateFormater.stringFromDate(NSDate()), jsonLogString)
-        
         file.seekToEndOfFile()
-        file.writeData(logMessage.dataUsingEncoding(NSUTF8StringEncoding)!)
+        file.writeData(beaconActivity.description.dataUsingEncoding(NSUTF8StringEncoding)!)
     }
     
     func readActivityLog() -> NSData {

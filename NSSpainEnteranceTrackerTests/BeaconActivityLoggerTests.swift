@@ -35,7 +35,17 @@ class BeaconActivityLoggerTests: XCTestCase {
     
     func testLogger() {
         var logger = BeaconActivityLogger();
-        logger.logActivity("dummy test string");
+        var beaconActivity = BeaconActivity()
+        let dateFormater : NSDateFormatter = NSDateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"
+        beaconActivity.timeStamp = String(format:"%@", dateFormater.stringFromDate(NSDate()))
+        beaconActivity.proximityUUID = NSUUID(UUIDString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")
+        beaconActivity.major = 2
+        beaconActivity.minor = 1
+        beaconActivity.proximity = .Immediate
+        beaconActivity.accuracy = 2
+        beaconActivity.rssi = 123456
+        logger.logActivity(beaconActivity);
         logger.printActivityLog()
     }
 

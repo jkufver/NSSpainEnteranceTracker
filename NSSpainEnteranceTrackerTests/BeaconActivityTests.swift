@@ -39,6 +39,11 @@ class BeaconActivityTests: XCTestCase {
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"
         beaconActivity.timeStamp = String(format:"%@", dateFormater.stringFromDate(NSDate()))
         beaconActivity.proximityUUID = NSUUID(UUIDString: "123456")
+        beaconActivity.major = 2
+        beaconActivity.minor = 1
+        beaconActivity.proximity = .Immediate
+        beaconActivity.accuracy = 2
+        beaconActivity.rssi = 123456
     }
 
 }

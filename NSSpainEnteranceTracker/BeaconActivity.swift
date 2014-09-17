@@ -10,19 +10,15 @@ import Foundation
 import CoreLocation
 
 class BeaconActivity: NSObject {
-    var timeStamp : String?
-    var proximityUUID : NSUUID?
-    var major : NSNumber?
-    var minor : NSNumber?
-    var proximity : CLProximity?
-    var accuracy : CLLocationAccuracy?
-    var rssi : Int?
+    var timeStamp : String!
+    var proximityUUID : NSUUID!
+    var major : NSNumber!
+    var minor : NSNumber!
+    var proximity : CLProximity!
+    var accuracy : CLLocationAccuracy!
+    var rssi : Int!
     
     override var description: String {
-        return customDescription()
-    }
-    
-    func customDescription() -> String {
-        return "Timestamp:\(timeStamp),UUID:\(proximityUUID),Major:\(major),Minor:\(minor),Proximity:\(proximity),Accuracy:\(accuracy),RSSI:\(rssi)"
+        return String(format: "Timestamp:%@,UUID:%@,Major:%@,Minor:%@,Proximity:%d,Accuracy:%.2f,RSSI:%d\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
     }
 }
