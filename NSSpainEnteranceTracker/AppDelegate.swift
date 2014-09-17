@@ -14,14 +14,14 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-    var locationManager: CLLocationManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
         
+        let engine = MonitoringEngine.sharedInstance
+        
+        println(engine)
         return true
     }
 
@@ -71,22 +71,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 ////        }
 //    }
 
-    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
-        
-        let notification = UILocalNotification();
-        var message: String;
-        
-        switch state {
-        case .Inside:
-            message = "Notify – you are inside the region"
-        case .Outside:
-            message = "Notify – you are outside the region"
-        default:
-            return
-        }
-
-        // Do something
-    }
+    
+//    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
+//        
+//        let notification = UILocalNotification();
+//        var message: String;
+//        
+//        switch state {
+//        case .Inside:
+//            message = "Notify – you are inside the region"
+//        case .Outside:
+//            message = "Notify – you are outside the region"
+//        default:
+//            return
+//        }
+//
+//        // Do something
+//    }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         // If the application is in the foreground, we will notify the user of the region's state via an alert.

@@ -103,8 +103,10 @@
 				48553FD519C98F8E00C9A7A6 /* Main.storyboard */,
 				48553FD819C98F8E00C9A7A6 /* Images.xcassets */,
 				48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */,
+				4855405519C9CE7600C9A7A6 /* MonitoringEngine.swift */,
 				48553FCD19C98F8E00C9A7A6 /* Supporting Files */,
 				FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */,
+				6FF4309919C9DC6100D21C55 /* BeaconSignalDispatcher.swift */,
 			);
 			path = NSSpainEnteranceTracker;
 			sourceTree = "<group>";
@@ -112,6 +114,8 @@
 		48553FCD19C98F8E00C9A7A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCA557F119C9DAD300C2AB32 /* Icon.png */,
+				CCA557F219C9DAD300C2AB32 /* Icon@2x.png */,
 				CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */,
 				48553FCE19C98F8E00C9A7A6 /* Info.plist */,
 			);
@@ -234,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48553FD719C98F8E00C9A7A6 /* Main.storyboard in Resources */,
+				CCA557F419C9DAD300C2AB32 /* Icon@2x.png in Resources */,
+				CCA557F319C9DAD300C2AB32 /* Icon.png in Resources */,
 				48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */,
 				48553FD919C98F8E00C9A7A6 /* Images.xcassets in Resources */,
 				CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */,
@@ -254,10 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FF4309A19C9DC6100D21C55 /* BeaconSignalDispatcher.swift in Sources */,
 				FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */,
 				48553FD419C98F8E00C9A7A6 /* SecondViewController.swift in Sources */,
 				48553FD019C98F8E00C9A7A6 /* AppDelegate.swift in Sources */,
 				48553FD219C98F8E00C9A7A6 /* FirstViewController.swift in Sources */,
+				4855405619C9CE7600C9A7A6 /* MonitoringEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
