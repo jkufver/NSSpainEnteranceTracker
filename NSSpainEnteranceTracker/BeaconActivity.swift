@@ -32,6 +32,16 @@ class BeaconActivity: NSObject {
         self.rssi = 123456
     }
     
+    convenience init(beacon:CLBeacon) {
+        self.init()
+        self.proximityUUID = beacon.proximityUUID
+        self.major = beacon.major
+        self.minor = beacon.minor
+        self.proximity = beacon.proximity
+        self.accuracy = beacon.accuracy
+        self.rssi = beacon.rssi
+    }
+    
     override var description: String {
         return String(format: "Timestamp:%@,UUID:%@,Major:%@,Minor:%@,Proximity:%d,Accuracy:%.2f,RSSI:%d\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
     }
