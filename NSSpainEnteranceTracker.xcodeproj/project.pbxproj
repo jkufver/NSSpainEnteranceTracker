@@ -15,6 +15,9 @@
 		48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */; };
 		48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */; };
 		CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */; };
+		FC21F23819C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
+		FC21F23919C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
+		FC21F23B19C9C53000491F9A /* BeaconActivityLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		48553FE619C98F8E00C9A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSpainEnteranceTrackerTests.swift; sourceTree = "<group>"; };
 		CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beaconIcon@2x.png"; sourceTree = "<group>"; };
+		FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLogger.swift; sourceTree = "<group>"; };
+		FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLoggerTests.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4855405419C99E6000C9A7A6 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +70,7 @@
 		48553FC119C98F8E00C9A7A6 = {
 			isa = PBXGroup;
 			children = (
+				4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */,
 				48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */,
 				48553FE419C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests */,
 				48553FCB19C98F8E00C9A7A6 /* Products */,
@@ -81,6 +89,7 @@
 		48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FC21F23619C9999D00491F9A /* utils */,
 				48553FCF19C98F8E00C9A7A6 /* AppDelegate.swift */,
 				48553FD119C98F8E00C9A7A6 /* FirstViewController.swift */,
 				48553FD319C98F8E00C9A7A6 /* SecondViewController.swift */,
@@ -106,6 +115,7 @@
 			children = (
 				48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */,
 				48553FE519C98F8E00C9A7A6 /* Supporting Files */,
+				FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */,
 			);
 			path = NSSpainEnteranceTrackerTests;
 			sourceTree = "<group>";
@@ -116,6 +126,14 @@
 				48553FE619C98F8E00C9A7A6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC21F23619C9999D00491F9A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +239,7 @@
 			files = (
 				48553FD419C98F8E00C9A7A6 /* SecondViewController.swift in Sources */,
 				48553FD019C98F8E00C9A7A6 /* AppDelegate.swift in Sources */,
+				FC21F23819C99A3300491F9A /* BeaconActivityLogger.swift in Sources */,
 				48553FD219C98F8E00C9A7A6 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC21F23B19C9C53000491F9A /* BeaconActivityLoggerTests.swift in Sources */,
+				FC21F23919C99A3300491F9A /* BeaconActivityLogger.swift in Sources */,
 				48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
