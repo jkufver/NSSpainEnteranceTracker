@@ -34,7 +34,7 @@ class BeaconActivityLoggerTests: XCTestCase {
     }
     
     func testLogger() {
-        var logger = BeaconActivityLogger();
+        var logger = BeaconActivityLogger.sharedInstance;
         var beaconActivity = BeaconActivity()
         let dateFormater : NSDateFormatter = NSDateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"

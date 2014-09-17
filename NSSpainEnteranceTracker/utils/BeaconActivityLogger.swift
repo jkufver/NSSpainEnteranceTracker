@@ -8,12 +8,17 @@
 
 import Foundation
 
+private let _beaconActivityLoggerSingletonInstance = BeaconActivityLogger()
+
 class BeaconActivityLogger {
+
+    var file: NSFileHandle!
     
-    var file : NSFileHandle!
+    class var sharedInstance: BeaconActivityLogger {
+        return _beaconActivityLoggerSingletonInstance
+    }
     
-    init()
-    {
+    init() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let logSessionName = "BeaconActivity.log"
         let fileName = "\(documentsPath)/\(logSessionName)"
@@ -26,7 +31,7 @@ class BeaconActivityLogger {
     
     func logActivity(beaconActivity: BeaconActivity)
     {
-        file.seekToEndOfFile()
+        self.file.seekToEndOfFile()
         file.writeData(beaconActivity.description.dataUsingEncoding(NSUTF8StringEncoding)!)
     }
     
