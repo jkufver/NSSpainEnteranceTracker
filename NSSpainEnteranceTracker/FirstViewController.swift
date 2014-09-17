@@ -7,26 +7,35 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, MonitoringEngineDelegate, BeaconSignalDispatcherDelegate {
 
     @IBOutlet var outsideBeaconImageView: UIImageView!
     @IBOutlet var insideBeaconImageView: UIImageView!
     @IBOutlet var insideBeaconUDIDLabel: UILabel!
     @IBOutlet var outsideBeaconUDIDLabel: UILabel!
     
+    @IBOutlet var whereIamLabel: UILabel!
+    
+    
+    func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!) {
+        
+        for activity in beacons {
+             self.updateBeaconInfo(activity as CLBeacon);
+        }
+    }
+    
+    func beaconSignalDispatcherDidSignalEventOfType(eventType: LocationRelatedToVenue, location:String) {
+        whereIamLabel.text = eventType.simpleDescription()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-    // just for testing
-        let testactivity: BeaconActivity = BeaconActivity()
-        
-        testactivity.minor = NSNumber.numberWithInt(0)
-        self.updateBeaconInfo(testactivity);
-        
-        testactivity.minor = NSNumber.numberWithInt(1);
-        self.updateBeaconInfo(testactivity);
+        MonitoringEngine.sharedInstance.registerDelegate(self);
+        BeaconSignalDispatcher.sharedInstance.registerDelegate(self);
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +43,8 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func updateBeaconInfo(beaconActivity : BeaconActivity) -> Void {
+    
+    func updateBeaconInfo(beaconActivity : CLBeacon) -> Void {
         
         let newString = beaconActivity.description.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
         

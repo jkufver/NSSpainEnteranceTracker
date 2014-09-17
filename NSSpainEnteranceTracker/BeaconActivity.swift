@@ -14,7 +14,7 @@ class BeaconActivity: NSObject {
     var proximityUUID : NSUUID!
     var major : NSNumber!
     var minor : NSNumber!
-    var proximity : CLProximity = .Unknown
+    var proximity : CLProximity!
     var accuracy : CLLocationAccuracy!
     var rssi : Int!
     
@@ -25,10 +25,10 @@ class BeaconActivity: NSObject {
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"
         self.timeStamp = String(format:"%@", dateFormater.stringFromDate(NSDate()))
         self.proximityUUID = NSUUID(UUIDString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")
-        self.major = 2
-        self.minor = 1
-        self.proximity = .Immediate
-        self.accuracy = 2
+        self.major = 999
+        self.minor = 999
+        self.proximity = .Unknown
+        self.accuracy = 999
         self.rssi = 123456
     }
     
