@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import CoreBluetooth
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    var locationManager: CLLocationManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
         return true
     }
 
@@ -41,6 +47,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+//    func startMonitoring() {
+//        let beaconIdentifier = "com.example.apple-samplecode.AirLocate"
+//        
+//
+//        let defaultProximityUUID = NSUUID(UUIDString: "8C2486A0-3E4F-11E4-916C-0800200C9A66")
+//       
+//        // if region monitoring is enabled, update the region being monitored
+//        let region = CLBeaconRegion(proximityUUID: defaultProximityUUID, identifier: beaconIdentifier)
+//
+//        region.notifyOnEntry = false
+//        region.notifyOnExit = false
+//        region.notifyEntryStateOnDisplay = false
+//
+//        MEBe
+//        
+////            [[MEBeaconMonitoringManager sharedManager] startMonitoringForRegion:region];
+////            [[MEBeaconMonitoringManager sharedManager] startRanging];
+////            
+////            [[MEBeaconSignalDispatcher sharedManager] loadBeaconsFor:@"Beacons_InnovationLab"];
+////            [[MEBeaconSignalDispatcher sharedManager] startDispatcher];
+////        }
+//    }
 
+    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
+        
+        let notification = UILocalNotification();
+        var message: String;
+        
+        switch state {
+        case .Inside:
+            message = "Notify – you are inside the region"
+        case .Outside:
+            message = "Notify – you are outside the region"
+        default:
+            return
+        }
+
+        // Do something
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        // If the application is in the foreground, we will notify the user of the region's state via an alert.
+        UIAlertView(title: notification.alertBody, message: nil, delegate: nil, cancelButtonTitle: "OK").show()
+    }
 }
 

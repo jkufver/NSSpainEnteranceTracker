@@ -14,6 +14,7 @@
 		48553FD919C98F8E00C9A7A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48553FD819C98F8E00C9A7A6 /* Images.xcassets */; };
 		48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */; };
 		48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */; };
+		4855405419C99E6000C9A7A6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		48553FE119C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSSpainEnteranceTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48553FE619C98F8E00C9A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSpainEnteranceTrackerTests.swift; sourceTree = "<group>"; };
+		4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4855405419C99E6000C9A7A6 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		48553FC119C98F8E00C9A7A6 = {
 			isa = PBXGroup;
 			children = (
+				4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */,
 				48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */,
 				48553FE419C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests */,
 				48553FCB19C98F8E00C9A7A6 /* Products */,
