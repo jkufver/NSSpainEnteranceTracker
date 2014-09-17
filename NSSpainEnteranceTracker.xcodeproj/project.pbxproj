@@ -14,6 +14,7 @@
 		48553FD919C98F8E00C9A7A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48553FD819C98F8E00C9A7A6 /* Images.xcassets */; };
 		48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */; };
 		48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */; };
+		6FF4309A19C9DC6100D21C55 /* BeaconSignalDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF4309919C9DC6100D21C55 /* BeaconSignalDispatcher.swift */; };
 		CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */; };
 		CCA557F319C9DAD300C2AB32 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557F119C9DAD300C2AB32 /* Icon.png */; };
 		CCA557F419C9DAD300C2AB32 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557F219C9DAD300C2AB32 /* Icon@2x.png */; };
@@ -47,6 +48,7 @@
 		48553FE119C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSSpainEnteranceTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48553FE619C98F8E00C9A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSpainEnteranceTrackerTests.swift; sourceTree = "<group>"; };
+		6FF4309919C9DC6100D21C55 /* BeaconSignalDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconSignalDispatcher.swift; sourceTree = "<group>"; };
 		CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beaconIcon@2x.png"; sourceTree = "<group>"; };
 		CCA557F119C9DAD300C2AB32 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		CCA557F219C9DAD300C2AB32 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */,
 				48553FCD19C98F8E00C9A7A6 /* Supporting Files */,
 				FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */,
+				6FF4309919C9DC6100D21C55 /* BeaconSignalDispatcher.swift */,
 			);
 			path = NSSpainEnteranceTracker;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FF4309A19C9DC6100D21C55 /* BeaconSignalDispatcher.swift in Sources */,
 				FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */,
 				48553FD419C98F8E00C9A7A6 /* SecondViewController.swift in Sources */,
 				48553FD019C98F8E00C9A7A6 /* AppDelegate.swift in Sources */,
