@@ -22,10 +22,10 @@ class FirstViewController: UIViewController {
     // just for testing
         let testactivity: BeaconActivity = BeaconActivity()
         
-        testactivity.major = NSNumber.numberWithInt(11)
+        testactivity.minor = NSNumber.numberWithInt(0)
         self.updateBeaconInfo(testactivity);
         
-        testactivity.major = NSNumber.numberWithInt(10);
+        testactivity.minor = NSNumber.numberWithInt(1);
         self.updateBeaconInfo(testactivity);
     }
 
