@@ -45,4 +45,8 @@ class BeaconActivity: NSObject {
     override var description: String {
         return String(format: "Timestamp:%@,UUID:%@,Major:%@,Minor:%@,Proximity:%d,Accuracy:%.2f,RSSI:%d\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
     }
+
+    var jsonDescription: String {
+        return String(format: "{\"Timestamp\":\"%@\",\"UUID\":\"%@\",\"Major\":%@,\"Minor\":%@,\"Proximity\":%d,\"Accuracy\":%.2f,\"RSSI\":%d}\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
+    }
 }

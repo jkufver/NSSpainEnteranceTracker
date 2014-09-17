@@ -32,7 +32,7 @@ class BeaconActivityLogger {
     func logActivity(beaconActivity: BeaconActivity)
     {
         self.file.seekToEndOfFile()
-        file.writeData(beaconActivity.description.dataUsingEncoding(NSUTF8StringEncoding)!)
+        file.writeData(beaconActivity.jsonDescription.dataUsingEncoding(NSUTF8StringEncoding)!)
     }
     
     func readActivityLog() -> NSData {
