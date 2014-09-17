@@ -23,15 +23,15 @@ protocol BeaconSignalDispatcherDelegate : NSObjectProtocol {
     func beaconSignalDispatcherDidSignalEventOfType(eventType: BeaconEventType, location:String)
 }
 
-class BeaconSignalDispatcher: NSObject {
+private let _beaconSignalDispatcherSingletonInstance = BeaconSignalDispatcher()
+
+class BeaconSignalDispatcher: NSObject, MonitoringEngineDelegate {
     var beacons   = Array<BeaconActivity>()
     var delegates = Array<BeaconSignalDispatcherDelegate>()
     var signals   = Array<AnyObject>()
     
-    private let _singletonInstance = BeaconSignalDispatcher()
-    
-    func sharedInstance()-> BeaconSignalDispatcher {
-        return _singletonInstance
+    class var sharedInstance: BeaconSignalDispatcher {
+        return _beaconSignalDispatcherSingletonInstance
     }
     
     func registerDelegate(item:BeaconSignalDispatcherDelegate) {

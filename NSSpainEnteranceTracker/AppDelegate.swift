@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         
         let engine = MonitoringEngine.sharedInstance
+        let dispatcher = BeaconSignalDispatcher.sharedInstance
+        engine.registerDelegate(dispatcher)
         
         println(engine)
         return true
