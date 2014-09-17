@@ -19,9 +19,14 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.updateBeaconInfo(0, UDID:"Test-Inside", major:"1.2", minor:"1.4", distanceRange:"near");
-        self.updateBeaconInfo(1, UDID:"Test-Outside", major:"1.2", minor:"1.4", distanceRange:"near");
-
+    // just for testing
+        let testactivity: BeaconActivity = BeaconActivity()
+        
+        testactivity.major = NSNumber.numberWithInt(11)
+        self.updateBeaconInfo(testactivity);
+        
+        testactivity.major = NSNumber.numberWithInt(10);
+        self.updateBeaconInfo(testactivity);
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +34,14 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func updateBeaconInfo(inside: Bool, UDID:String, major: String, minor: String, distanceRange: String) -> Void {
+    func updateBeaconInfo(beaconActivity : BeaconActivity) -> Void {
         
-        if inside {
-            self.insideBeaconUDIDLabel.text = UDID;
+        let newString = beaconActivity.description.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        if beaconActivity.major == 11 {
+            self.insideBeaconUDIDLabel.text = newString
         } else {
-            self.outsideBeaconUDIDLabel.text = UDID;
+            self.outsideBeaconUDIDLabel.text = newString
         }
     }
 
