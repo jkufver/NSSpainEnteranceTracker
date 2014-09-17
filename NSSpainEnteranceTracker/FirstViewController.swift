@@ -9,13 +9,14 @@
 import UIKit
 import CoreLocation
 
-class FirstViewController: UIViewController, MonitoringEngineDelegate {
+class FirstViewController: UIViewController, MonitoringEngineDelegate, BeaconSignalDispatcherDelegate {
 
     @IBOutlet var outsideBeaconImageView: UIImageView!
     @IBOutlet var insideBeaconImageView: UIImageView!
     @IBOutlet var insideBeaconUDIDLabel: UILabel!
     @IBOutlet var outsideBeaconUDIDLabel: UILabel!
     
+    @IBOutlet var whereIamLabel: UILabel!
     
     
     func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!) {
@@ -25,12 +26,16 @@ class FirstViewController: UIViewController, MonitoringEngineDelegate {
         }
     }
     
+    func beaconSignalDispatcherDidSignalEventOfType(eventType: LocationRelatedToVenue, location:String) {
+        whereIamLabel.text = eventType.simpleDescription()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         MonitoringEngine.sharedInstance.registerDelegate(self);
+        BeaconSignalDispatcher.sharedInstance.registerDelegate(self);
     }
 
     override func didReceiveMemoryWarning() {
