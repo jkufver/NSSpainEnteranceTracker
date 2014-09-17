@@ -50,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4855405419C99E6000C9A7A6 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +67,7 @@
 		48553FC119C98F8E00C9A7A6 = {
 			isa = PBXGroup;
 			children = (
+				4855405319C99E6000C9A7A6 /* CoreBluetooth.framework */,
 				48553FCC19C98F8E00C9A7A6 /* NSSpainEnteranceTracker */,
 				48553FE419C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests */,
 				48553FCB19C98F8E00C9A7A6 /* Products */,
