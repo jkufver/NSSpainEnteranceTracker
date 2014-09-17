@@ -17,8 +17,6 @@ enum BeaconEventType : Int{
     case ExitImmediate
 }
 
-let MinAccuracyLevel = 3.0
-
 protocol BeaconSignalDispatcherDelegate : NSObjectProtocol {
     func beaconSignalDispatcherDidSignalEventOfType(eventType: BeaconEventType, location:String)
 }
@@ -59,21 +57,6 @@ class BeaconSignalDispatcher: NSObject, MonitoringEngineDelegate {
         signals.append(item)
     }
     
-    func loadBeacons () {
-        var outdoor = BeaconActivity()
-        outdoor.major = 1
-        outdoor.minor = 0
-        
-        beacons.append(outdoor)
-        
-        
-        var indoor = BeaconActivity()
-        indoor.major = 1
-        indoor.minor = 1
-        
-        beacons.append(indoor)
-    }
-    
     func beaconForMinor(minor: Int)->(BeaconActivity?) {
         for (index, element) in enumerate(beacons) {
             if element.minor == minor {
@@ -90,13 +73,13 @@ class BeaconSignalDispatcher: NSObject, MonitoringEngineDelegate {
         }
     }
     
-    func handleBeaconSignal(beacon:CLBeacon) {
-        if let staticBeacon = beaconForMinor(beacon.minor) {
-            if staticBeacon.proximity == beacon.proximity {
+    func handleBeaconSignal(beacon:BeaconActivity) {
+        if let prevBeacon = beaconForMinor(beacon.minor) {
+            if prevBeacon.proximity == beacon.proximity {
                 return
             }
             
-            switch staticBeacon.proximity {
+            switch prevBeacon.proximity {
                 case .Immediate:
                     notifyObserversWithEventTypeAndLocation(.ExitImmediate, location: "test")
                     
@@ -116,13 +99,17 @@ class BeaconSignalDispatcher: NSObject, MonitoringEngineDelegate {
                 break
             }
             
-            staticBeacon.proximity = beacon.proximity;
+            // update previous beacon
+            beacons[beacon.minor] = beacon;
+        } else {
+            beacons[beacon.minor] = beacon;
         }
     }
     
     func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!) {
         for (index, element) in enumerate(beacons) {
-            handleBeaconSignal(element as CLBeacon)
+            var beaconActivity = BeaconActivity(beacon: element as CLBeacon)
+            handleBeaconSignal(beaconActivity)
         }
     }
 }
