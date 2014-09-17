@@ -14,7 +14,7 @@ class BeaconActivity: NSObject {
     var proximityUUID : NSUUID!
     var major : NSNumber!
     var minor : NSNumber!
-    var proximity : CLProximity!
+    var proximity : CLProximity = .Unknown
     var accuracy : CLLocationAccuracy!
     var rssi : Int!
     
