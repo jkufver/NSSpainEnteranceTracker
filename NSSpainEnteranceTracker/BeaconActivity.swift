@@ -18,6 +18,21 @@ class BeaconActivity: NSObject {
     var accuracy : CLLocationAccuracy!
     var rssi : Int!
     
+    
+    override init() {
+        // perform some initialization here
+        let dateFormater : NSDateFormatter = NSDateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss:sss"
+        self.timeStamp = String(format:"%@", dateFormater.stringFromDate(NSDate()))
+        self.proximityUUID = NSUUID(UUIDString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")
+        self.major = 2
+        self.minor = 1
+        self.proximity = .Immediate
+        self.accuracy = 2
+        self.rssi = 123456
+        
+    }
+    
     override var description: String {
         return String(format: "Timestamp:%@,UUID:%@,Major:%@,Minor:%@,Proximity:%d,Accuracy:%.2f,RSSI:%d\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
     }
