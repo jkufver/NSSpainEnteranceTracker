@@ -23,6 +23,7 @@ class SecondViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        loggerTextView.text = BeaconActivityLogger.sharedInstance.readActivityLog()
     }
 
 }

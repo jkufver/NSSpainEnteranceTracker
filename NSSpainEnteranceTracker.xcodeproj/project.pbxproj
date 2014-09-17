@@ -24,6 +24,7 @@
 		FC9D33A219C9D077001D1FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */; };
 		FC9D33A519C9D308001D1FD7 /* BeaconActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */; };
 		FC9D33A619C9DD35001D1FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */; };
+		FC9D33A719C9F588001D1FD7 /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9D33A719C9F588001D1FD7 /* BeaconActivityLogger.swift in Sources */,
 				FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */,
 				48553FD419C98F8E00C9A7A6 /* SecondViewController.swift in Sources */,
 				48553FD019C98F8E00C9A7A6 /* AppDelegate.swift in Sources */,

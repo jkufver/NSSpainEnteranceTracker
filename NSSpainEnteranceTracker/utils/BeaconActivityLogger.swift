@@ -36,12 +36,16 @@ class BeaconActivityLogger {
     }
     
     func readActivityLog() -> NSData {
+        file.seekToFileOffset(0)
         return file.readDataToEndOfFile()
+    }
+    
+    func readActivityLog() -> NSString {
+        return NSString(data: readActivityLog(), encoding: NSUTF8StringEncoding)
     }
     
     func printActivityLog()
     {
-        file.seekToFileOffset(0)
         let string = NSString(data: readActivityLog(), encoding: NSUTF8StringEncoding)
         NSLog("BeaconActivityLogger contents: %@", string);
     }
