@@ -14,14 +14,15 @@
 		48553FD919C98F8E00C9A7A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48553FD819C98F8E00C9A7A6 /* Images.xcassets */; };
 		48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48553FDA19C98F8E00C9A7A6 /* LaunchScreen.xib */; };
 		48553FE819C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */; };
-		FC21F23819C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
+		CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */; };
+		CCA557F319C9DAD300C2AB32 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557F119C9DAD300C2AB32 /* Icon.png */; };
+		CCA557F419C9DAD300C2AB32 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557F219C9DAD300C2AB32 /* Icon@2x.png */; };
 		FC21F23919C99A3300491F9A /* BeaconActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */; };
 		FC21F23B19C9C53000491F9A /* BeaconActivityLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */; };
 		FC9D339F19C9CFED001D1FD7 /* BeaconActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */; };
 		FC9D33A019C9CFED001D1FD7 /* BeaconActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */; };
 		FC9D33A219C9D077001D1FD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */; };
 		FC9D33A519C9D308001D1FD7 /* BeaconActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */; };
-		CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +47,14 @@
 		48553FE119C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSSpainEnteranceTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48553FE619C98F8E00C9A7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48553FE719C98F8E00C9A7A6 /* NSSpainEnteranceTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSpainEnteranceTrackerTests.swift; sourceTree = "<group>"; };
+		CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beaconIcon@2x.png"; sourceTree = "<group>"; };
+		CCA557F119C9DAD300C2AB32 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		CCA557F219C9DAD300C2AB32 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		FC21F23719C99A3300491F9A /* BeaconActivityLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLogger.swift; sourceTree = "<group>"; };
 		FC21F23A19C9C53000491F9A /* BeaconActivityLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityLoggerTests.swift; sourceTree = "<group>"; };
 		FC9D339E19C9CFED001D1FD7 /* BeaconActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivity.swift; sourceTree = "<group>"; };
 		FC9D33A119C9D077001D1FD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FC9D33A419C9D308001D1FD7 /* BeaconActivityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconActivityTests.swift; sourceTree = "<group>"; };
-		CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beaconIcon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 		48553FCD19C98F8E00C9A7A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCA557F119C9DAD300C2AB32 /* Icon.png */,
+				CCA557F219C9DAD300C2AB32 /* Icon@2x.png */,
 				CCA557EF19C9C66500C2AB32 /* beaconIcon@2x.png */,
 				48553FCE19C98F8E00C9A7A6 /* Info.plist */,
 			);
@@ -233,6 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48553FD719C98F8E00C9A7A6 /* Main.storyboard in Resources */,
+				CCA557F419C9DAD300C2AB32 /* Icon@2x.png in Resources */,
+				CCA557F319C9DAD300C2AB32 /* Icon.png in Resources */,
 				48553FDC19C98F8E00C9A7A6 /* LaunchScreen.xib in Resources */,
 				48553FD919C98F8E00C9A7A6 /* Images.xcassets in Resources */,
 				CCA557F019C9C66500C2AB32 /* beaconIcon@2x.png in Resources */,
