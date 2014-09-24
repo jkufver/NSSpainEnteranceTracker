@@ -47,6 +47,14 @@ class BeaconActivity: NSObject {
     }
 
     var jsonDescription: String {
-        return String(format: "{\"Timestamp\":\"%@\",\"UUID\":\"%@\",\"Major\":%@,\"Minor\":%@,\"Proximity\":%d,\"Accuracy\":%.2f,\"RSSI\":%d}\n",timeStamp,proximityUUID.UUIDString,major.stringValue,minor.stringValue,proximity.hashValue,accuracy,rssi)
+        var error : NSError?
+        let dict = ["Timestamp":timeStamp,
+                    "UUID":proximityUUID.UUIDString,
+                    "Major":major,
+                    "Minor":minor,
+                    "Proximity":proximity.hashValue,
+                    "Accuracy":accuracy,
+                    "RSSI":rssi]
+        return (NSString(data: NSJSONSerialization.dataWithJSONObject(dict, options: nil, error: &error)!, encoding: NSUTF8StringEncoding) + "\n") as String
     }
 }

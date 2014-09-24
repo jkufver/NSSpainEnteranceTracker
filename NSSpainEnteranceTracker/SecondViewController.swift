@@ -23,7 +23,11 @@ class SecondViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        loggerTextView.text = BeaconActivityLogger.sharedInstance.readActivityLog()
+        let jsonDataString : String = BeaconActivityLogger.sharedInstance.readActivityLog()
+        loggerTextView.text = jsonDataString
+//        let jsonDataStringArray = jsonDataString.componentsSeparatedByString("\n")
+//        for jsonString : String in jsonDataStringArray{
+//        }
     }
 
 }
