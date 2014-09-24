@@ -13,6 +13,7 @@ private let _beaconActivityLoggerSingletonInstance = BeaconActivityLogger()
 class BeaconActivityLogger {
 
     var file: NSFileHandle!
+    var filePath : NSString!
     
     class var sharedInstance: BeaconActivityLogger {
         return _beaconActivityLoggerSingletonInstance
@@ -21,18 +22,20 @@ class BeaconActivityLogger {
     init() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let logSessionName = "BeaconActivity.log"
-        let fileName = "\(documentsPath)/\(logSessionName)"
-        if (!NSFileManager .defaultManager().fileExistsAtPath(fileName))
+        filePath = "\(documentsPath)/\(logSessionName)"
+        if (!NSFileManager .defaultManager().fileExistsAtPath(filePath))
         {
-            NSFileManager.defaultManager().createFileAtPath(fileName, contents: nil, attributes: nil)
+            NSFileManager.defaultManager().createFileAtPath(filePath, contents: nil, attributes: nil)
         }
-        file = NSFileHandle(forUpdatingAtPath: fileName)
+        file = NSFileHandle(forUpdatingAtPath: filePath)
     }
     
     func logActivity(beaconActivity: BeaconActivity)
     {
         self.file.seekToEndOfFile()
-        file.writeData(beaconActivity.jsonDescription.dataUsingEncoding(NSUTF8StringEncoding)!)
+        let jsonString = beaconActivity.jsonDescription;
+        NSLog("%@", jsonString)
+        file.writeData(jsonString.dataUsingEncoding(NSUTF8StringEncoding)!)
     }
     
     func readActivityLog() -> NSData {

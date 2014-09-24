@@ -48,5 +48,35 @@ class BeaconActivityLoggerTests: XCTestCase {
         logger.logActivity(beaconActivity);
         logger.printActivityLog()
     }
+    
+    func testReadLog() {
+        let jsonDataString : String = BeaconActivityLogger.sharedInstance.readActivityLog()
+        let jsonDataStringArray = jsonDataString.componentsSeparatedByString("\n")
+        for jsonString : String in jsonDataStringArray{
+            if countElements(jsonString) > 0 {
+                var jsonerror : NSError?
+                let swiftObject:AnyObject = NSJSONSerialization.JSONObjectWithData(jsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror)!
+                if let nsDictionaryObject = swiftObject as? NSDictionary {
+                    if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                        let test1 = (swiftDictionary["Timestamp"] as NSString) as String
+                        let test2 = (swiftDictionary["UUID"] as NSString) as String
+                        let test3 = (swiftDictionary["Accuracy"] as NSNumber).doubleValue
+                        let test4 = (swiftDictionary["RSSI"] as NSNumber).integerValue
+                        let test5 = (swiftDictionary["Major"] as NSNumber).integerValue
+                        let test6 = (swiftDictionary["Minor"] as NSNumber).integerValue
+                        let test7 = (swiftDictionary["Proximity"] as NSNumber).integerValue
+                        println(test1)
+                        println(test2)
+                        println(test3)
+                        println(test4)
+                        println(test5)
+                        println(test6)
+                        println(test7)
+                    }
+                }
+            }
+        }
+        
+    }
 
 }
