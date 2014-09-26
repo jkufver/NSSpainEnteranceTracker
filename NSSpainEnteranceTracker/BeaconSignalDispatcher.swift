@@ -129,8 +129,12 @@ class BeaconSignalDispatcher: NSObject, MonitoringEngineDelegate {
 //    }
     
     func monitoringEngine(engine: MonitoringEngine!, didRangeBeacons beacons: [AnyObject]!) {
-        var outside = beaconForMinor(beacons, minor: 0) as CLBeacon?
-        var inside = beaconForMinor(beacons, minor: 1) as CLBeacon?
+        var outside = beaconForMinor(beacons, minor: BEACON_OUTSIDE_MINOR) as CLBeacon?
+        var inside = beaconForMinor(beacons, minor: BEACON_INSIDE_MINOR) as CLBeacon?
+        
+        if outside == nil && inside == nil {
+            return
+        }
         
         if ((outside != nil && inside == nil)||(outside!.accuracy < inside!.accuracy)) {
             // outside

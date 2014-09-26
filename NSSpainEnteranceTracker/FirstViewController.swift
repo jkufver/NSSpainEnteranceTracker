@@ -48,27 +48,29 @@ class FirstViewController: UIViewController, MonitoringEngineDelegate, BeaconSig
         
         let newString = beaconActivity.description.stringByReplacingOccurrencesOfString(",", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
-        if beaconActivity.minor == 1 {
+        var animatedBeaconView: UIView?
+        
+        if beaconActivity.minor == BEACON_INSIDE_MINOR {
             self.insideBeaconUDIDLabel.text = newString
+            animatedBeaconView = insideBeaconImageView
             
-            UIView.animateWithDuration(0.5, animations: {
-                self.insideBeaconImageView.alpha = 0
-                }, completion: {
-                    (value: Bool) in
-                self.insideBeaconImageView.alpha = 1.0
-            })
-            
-        } else if beaconActivity.minor == 0 {
+        } else if beaconActivity.minor == BEACON_OUTSIDE_MINOR {
             self.outsideBeaconUDIDLabel.text = newString
-            
-            UIView.animateWithDuration(0.5, animations: {
-                self.outsideBeaconImageView.alpha = 0
+            animatedBeaconView = outsideBeaconImageView
+        }
+
+        if let viewToAnimate = animatedBeaconView {
+            let duration = 0.2
+            UIView.animateWithDuration(duration, animations: {
+                viewToAnimate.alpha = 1.0
                 }, completion: {
                     (value: Bool) in
-                    self.outsideBeaconImageView.alpha = 1.0
+                    
+                    UIView.animateWithDuration(duration, animations: {
+                        viewToAnimate.alpha = 0.4
+                        }, completion: nil)
             })
         }
     }
-
 }
 
